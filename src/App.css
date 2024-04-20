@@ -1,0 +1,91 @@
+/* src/Chat.css */
+.chat-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%; /* Circular border */
+  background-color: #0078FF;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: width 0.3s ease, height 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 1000; /* Make sure it's above other content */
+}
+
+.chat-container.open {
+  width: 350px; /* Expanded width */
+  height: auto; /* Allow it to expand vertically */
+  border-radius: 20px; /* Rounded corners when open */
+}
+
+.chat-header {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.chat-header img {
+  width: 50%; /* Smaller icon size */
+  height: auto;
+}
+
+.open .chat-header {
+  transform: rotate(45deg); /* Rotate close icon when open */
+}
+
+.chat-body {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  max-height: 500px;
+  overflow: auto;
+}
+
+.messages {
+  flex-grow: 1;
+  overflow: auto;
+}
+
+.message {
+  margin: 5px;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: #f4f4f8;
+  max-width: 80%;
+}
+
+.user {
+  align-self: flex-end;
+  background-color: #dcf8c6;
+}
+
+.input-area {
+  display: flex;
+  border-top: 1px solid #ccc;
+}
+
+.input-area input {
+  flex-grow: 1;
+  border: none;
+  padding: 10px;
+  border-radius: 20px;
+  margin-right: 10px;
+}
+
+.input-area button {
+  padding: 10px 15px;
+  background-color: #0078FF;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.closed .chat-body {
+  display: none;
+}
